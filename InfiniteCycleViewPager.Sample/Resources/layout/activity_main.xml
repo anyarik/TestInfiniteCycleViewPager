@@ -10,91 +10,118 @@
     android:clipToPadding="false"
     android:orientation="vertical"
     tools:context=".screens.MainActivity">
-  <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
-      android:id="@+id/hicvp"
-      android:layout_width="match_parent"
-      android:layout_height="450dp"
-      app:icvp_center_page_scale_offset="30dp"
-      app:icvp_min_page_scale_offset="30dp"
-      app:icvp_scroll_duration="1000"
-      app:icvp_max_page_scale="0.70"
-      app:icvp_min_page_scale="0.55"
-      app:icvp_medium_scaled="true"/>
-
-  <RelativeLayout
-       android:id="@+id/relLayPoints"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_alignParentBottom="true"
-       android:layout_centerHorizontal="true"
-       android:layout_marginBottom="20dp">
 
     <ImageView
-        android:id="@+id/firstPoint"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:background="@drawable/startScreenPointStatic" />
+        android:id="@+id/image_menu"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/menu_icon"/>
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal	="true"
+        android:layout_marginTop="10dp"
+        android:background="#567" />
 
     <ImageView
-        android:id="@+id/secondPoint"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/firstPoint"
-        android:layout_centerVertical="true"
-        android:background="@drawable/startScreenPointStatic" />
+        android:id="@+id/image_avatar"
+        android:layout_below="@id/image_menu"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+       android:layout_marginLeft="-15dp"
+        android:background="@drawable/avatar"/>
 
-    <ImageView
-        android:id="@+id/thirdPoint"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/secondPoint"
-        android:layout_centerVertical="true"
-        android:background="@drawable/startScreenPointStatic" />
+    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+        android:id="@+id/hicvp"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_below="@id/image_avatar"
+        android:layout_marginTop="-80dp"
+        app:icvp_center_page_scale_offset="30dp"
+        app:icvp_min_page_scale_offset="30dp"
+        app:icvp_scroll_duration="1000"
+        app:icvp_max_page_scale="0.70"
+        app:icvp_min_page_scale="0.55"
+        app:icvp_medium_scaled="true"/>
 
-    <ImageView
-        android:id="@+id/fourthPoint"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/thirdPoint"
-        android:layout_centerVertical="true"
-        android:background="@drawable/startScreenPointStatic" />
+    <RelativeLayout
+        android:id="@+id/relLayPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
 
-    <ImageView
-        android:id="@+id/fifthPoint"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/fourthPoint"
-        android:layout_centerVertical="true"
-        android:background="@drawable/startScreenPointStatic" />
+        <ImageView
+            android:id="@+id/firstPoint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/startScreenPointStatic" />
 
-    <ImageView
-        android:id="@+id/sixthPoint"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/fifthPoint"
-        android:layout_centerVertical="true"
-        android:background="@drawable/startScreenPointStatic" />
+        <ImageView
+            android:id="@+id/secondPoint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/firstPoint"
+            android:layout_centerVertical="true"
+            android:background="@drawable/startScreenPointStatic" />
 
-    <!--<ImageView
-        android:id="@+id/seventhPoint"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/sixthPoint"
-        android:layout_centerVertical="true"
-        android:background="@drawable/startScreenPointStatic" />-->
+        <ImageView
+            android:id="@+id/thirdPoint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/secondPoint"
+            android:layout_centerVertical="true"
+            android:background="@drawable/startScreenPointStatic" />
 
-    <ImageView
-        android:id="@+id/movePoint"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_centerVertical="true"
-        android:background="@drawable/startScreenPointMove" />
-  </RelativeLayout>
+        <ImageView
+            android:id="@+id/fourthPoint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/thirdPoint"
+            android:layout_centerVertical="true"
+            android:background="@drawable/startScreenPointStatic" />
+
+        <ImageView
+            android:id="@+id/fifthPoint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/fourthPoint"
+            android:layout_centerVertical="true"
+            android:background="@drawable/startScreenPointStatic" />
+
+        <ImageView
+            android:id="@+id/sixthPoint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/fifthPoint"
+            android:layout_centerVertical="true"
+            android:background="@drawable/startScreenPointStatic" />
+
+        <!--<ImageView
+            android:id="@+id/seventhPoint"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/sixthPoint"
+            android:layout_centerVertical="true"
+            android:background="@drawable/startScreenPointStatic" />-->
+
+        <ImageView
+            android:id="@+id/movePoint"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/startScreenPointMove" />
+    </RelativeLayout>
 
 </RelativeLayout>

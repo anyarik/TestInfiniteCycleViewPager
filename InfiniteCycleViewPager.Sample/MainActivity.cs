@@ -14,7 +14,7 @@ using static Android.Locations.GpsStatus;
 
 namespace InfiniteCycleViewPager.Sample
 {
-    [Activity(Label = "InfiniteCycleViewPager.Sample", MainLauncher = true, Icon = "@mipmap/icon", Theme="@style/AppTheme")]
+    [Activity(Label = "InfiniteCycleViewPager.Sample", MainLauncher = true, Icon = "@mipmap/icon", Theme = "@style/AppTheme")]
     public class MainActivity : AppCompatActivity
     {
         public RelativeLayout backgroundView;
@@ -35,6 +35,8 @@ namespace InfiniteCycleViewPager.Sample
             horizontalInfiniteCycleViewPager.PageScrolled += HorizontalInfiniteCycleViewPager_PageScrolled;
 
             this.backgroundView = FindViewById<RelativeLayout>(Resource.Id.main_view_layout);
+            backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_one);
+
             this.pointLay = FindViewById<RelativeLayout>(Resource.Id.relLayPoints);
             this.movePoint = FindViewById<ImageView>(Resource.Id.movePoint);
             this.pointPosition = this.movePoint.GetX();
@@ -43,42 +45,7 @@ namespace InfiniteCycleViewPager.Sample
 
         private void HorizontalInfiniteCycleViewPager_PageScrolled(object sender, Android.Support.V4.View.ViewPager.PageScrolledEventArgs e)
         {
-            var Position = (sender as HorizontalInfiniteCycleViewPager).RealItem;
-            switch (Position)
-            {
-                case 0:
-                    this.pointPosition = FindViewById(Resource.Id.firstPoint).GetX();
-                    break;
-                case 1:
-                    this.pointPosition = FindViewById(Resource.Id.secondPoint).GetX();
-                    break;
-                case 2:
-                    this.pointPosition = FindViewById(Resource.Id.thirdPoint).GetX();
-                    break;
-                case 3:
-                    this.pointPosition = FindViewById(Resource.Id.fourthPoint).GetX();
-                    break;
-                case 4:
-                    this.pointPosition = FindViewById(Resource.Id.fifthPoint).GetX();
-                    break;
-                case 5:
-                    this.pointPosition = FindViewById(Resource.Id.sixthPoint).GetX();
-                    break;
-                //case 6:
-                //    this.pointPosition = this.Activity.FindViewById(Resource.Id.seventhPoint).GetX();
-                //    break;
-                default:
-                    this.pointPosition = 0;
-                    break;
-            }
 
-            float movePosition = 0;
-
-            if (pointLay.Width != 0)
-                movePosition = this.pointPosition + ((float)e.PositionOffsetPixels
-                                                    / (float)((Resources.DisplayMetrics.WidthPixels / this.pointLay.Width) * 6));
-
-            RunOnUiThread(() => movePoint.SetX(movePosition));
         }
 
         private void HorizontalInfiniteCycleViewPager_PageSelected(object sender, Android.Support.V4.View.ViewPager.PageSelectedEventArgs e)
@@ -88,31 +55,44 @@ namespace InfiniteCycleViewPager.Sample
             {
                 case 0:
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_one);
+                    this.pointPosition = FindViewById(Resource.Id.firstPoint).GetX();
                     break;
                 case 1:
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_two);
+                    this.pointPosition = FindViewById(Resource.Id.secondPoint).GetX();
+
                     break;
                 case 2:
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_three);
+                    this.pointPosition = FindViewById(Resource.Id.thirdPoint).GetX();
                     break;
                 case 3:
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_one);
+                    this.pointPosition = FindViewById(Resource.Id.fourthPoint).GetX();
                     break;
                 case 4:
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_one);
+                    this.pointPosition = FindViewById(Resource.Id.fifthPoint).GetX();
                     break;
                 case 5:
-                    backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_one);
+                    backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_two);
+                    this.pointPosition = FindViewById(Resource.Id.sixthPoint).GetX();
                     break;
-                //case 6:
-                //    this.pointPosition = this.Activity.FindViewById(Resource.Id.seventhPoint).GetX();
-                //    break;
+
                 default:
-                    backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_one);
+                    backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_three);
+                    this.pointPosition = 0;
                     break;
             }
-        }
 
+            float movePosition = 0;
+
+            if (pointLay.Width != 0)
+                movePosition = this.pointPosition;
+
+            RunOnUiThread(() => movePoint.SetX(movePosition));
+
+        }
     }
 }
 

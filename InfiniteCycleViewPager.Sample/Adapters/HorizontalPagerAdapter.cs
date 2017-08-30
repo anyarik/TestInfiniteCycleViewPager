@@ -137,7 +137,7 @@ namespace InfiniteCycleViewPager.Sample.Adapters
 
             view = mLayoutInflater.Inflate(Resource.Layout.item, container, false);
             AppUtils.SetupImage(mContext, view.FindViewById<ImageView>(Resource.Id.image), LIBRARIES[position], mainActivity);
-            view.FindViewById<TextView>(Resource.Id.card_title_text).Text = $"Текст {position + 1}";
+          
             container.AddView(view);
 
             return view;
