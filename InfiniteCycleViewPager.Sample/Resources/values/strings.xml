@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">InfinityCycleViewPager</string>
+  <string name="transition_string">hello</string>
+</resources>
