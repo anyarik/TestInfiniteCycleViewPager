@@ -11,6 +11,7 @@ using Android.Support.V4.App;
 using static Android.Resource;
 using Com.Gigamole.Infinitecycleviewpager;
 using static Android.Locations.GpsStatus;
+using Com.Bumptech.Glide;
 
 namespace InfiniteCycleViewPager.Sample
 {
@@ -42,10 +43,8 @@ namespace InfiniteCycleViewPager.Sample
             this.pointPosition = this.movePoint.GetX();
         }
 
-
         private void HorizontalInfiniteCycleViewPager_PageScrolled(object sender, Android.Support.V4.View.ViewPager.PageScrolledEventArgs e)
         {
-
         }
 
         private void HorizontalInfiniteCycleViewPager_PageSelected(object sender, Android.Support.V4.View.ViewPager.PageSelectedEventArgs e)
@@ -54,13 +53,18 @@ namespace InfiniteCycleViewPager.Sample
             switch (Position)
             {
                 case 0:
+                    //Glide.With(this)
+                    //        .Load(position == -1 ? libraryObject.getImage() : libraryObject.getImages()[position])
+                    //     .CenterCrop()
+                    //     .DiskCacheStrategy(DiskCacheStrategy.None)
+                    //     //.Listener(new RequestListener())
+                    //     .Into(imageView);
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_one);
                     this.pointPosition = FindViewById(Resource.Id.firstPoint).GetX();
                     break;
                 case 1:
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_two);
                     this.pointPosition = FindViewById(Resource.Id.secondPoint).GetX();
-
                     break;
                 case 2:
                     backgroundView.Background = Resources.GetDrawable(Resource.Drawable.background_three);

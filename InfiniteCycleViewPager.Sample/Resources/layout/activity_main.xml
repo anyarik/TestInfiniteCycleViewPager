@@ -38,14 +38,14 @@
     <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
         android:id="@+id/hicvp"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:layout_below="@id/image_avatar"
-        android:layout_marginTop="-80dp"
-        app:icvp_center_page_scale_offset="30dp"
-        app:icvp_min_page_scale_offset="30dp"
+        android:layout_marginTop="-60dp"
+        app:icvp_center_page_scale_offset="10dp"
+        app:icvp_min_page_scale_offset="10dp"
         app:icvp_scroll_duration="1000"
-        app:icvp_max_page_scale="0.70"
-        app:icvp_min_page_scale="0.55"
+        app:icvp_max_page_scale="0.90"
+        app:icvp_min_page_scale="0.75"
         app:icvp_medium_scaled="true"/>
 
     <RelativeLayout
